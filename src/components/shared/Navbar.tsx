@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: isVisible ? 0 : -100 }}
+      animate={{ y: isVisible ? 0 : -500 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       className="bg-[#6F4E19]/50 fixed top-0 w-full transition-all duration-500 z-[998] backdrop-blur-md"
     >
