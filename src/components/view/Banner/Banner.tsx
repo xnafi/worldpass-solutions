@@ -24,7 +24,7 @@ const Banner: React.FC = () => {
       <div
         className={`${style.bgText} bg-black/40 text-white flex justify-center items-center flex-col  px-2 md:px-4`}
       >
-        <div className="flex flex-col max-w-[1200px] space-y-5">
+        <div className="flex flex-col max-w-[1200px] space-y-7">
           <FadeIn delay={0.05}>
             <span className="headings">
               Your Gateway to Global Travel & Visa Solutions
@@ -37,10 +37,10 @@ const Banner: React.FC = () => {
           </FadeIn>
           <FadeIn delay={1}>
             <Link
-              href="/menu"
-              className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-2 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0"
+              href="/services"
+              className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-5 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0"
             >
-              EXPLORE
+              Start Your Application
             </Link>
           </FadeIn>
         </div>
