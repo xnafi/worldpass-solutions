@@ -2,8 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .headings {
+    @apply text-3xl md:text-5xl lg:text-5xl xl:text-7xl 2xl:text-7xl font-bold uppercase;
+  }
+  .sub-heading {
+    @apply text-base md:text-2xl lg:text-3xl font-semibold uppercase text-yellow-950;
+  }
+  .primary-text {
+    @apply text-sm md:text-base font-bold text-yellow-950;
+  }
+  .buttonPrimary {
+    @apply text-sm md:text-lg border;
+  }
+  .feature-title {
+    @apply text-lg md:text-2xl  xl:text-3xl font-semibold;
+  }
+  .feature-description {
+    @apply text-sm md:text-base;
+  }
+}
+
 :root {
-  --background: #ffffff;
+  --background: #72BF78;
   --foreground: #171717;
 }
 
@@ -16,6 +37,6 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #72BF78;
   font-family: Arial, Helvetica, sans-serif;
 }
