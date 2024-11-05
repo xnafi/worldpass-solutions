@@ -49,7 +49,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -500 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="bg-[#6F4E19]/50 fixed top-0 w-full transition-all duration-500 z-[998] backdrop-blur-md"
+      className="bg-[#6F4E19]/50 fixed top-0 w-full transition-all duration-500 z-[998] backdrop-blur-md h-[100px]"
     >
       <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-[100] w-full">
