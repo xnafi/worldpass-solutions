@@ -12,12 +12,8 @@ export default function LocoWraper({
     <LocomotiveScrollProvider
       options={{
         smooth: true,
-        direction: "horizontal",
-        touchMultiplier: 1,
-        lerp: 0.1,
-        scrollFromAnywhere: true,
-        gestureDirection: "vertical",
-        smartphone: true,
+        // direction: "horizontal",
+        
 
         // ... all available Locomotive Scroll instance options
       }}
