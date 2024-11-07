@@ -71,66 +71,6 @@ const Banner = () => {
             </motion.div>
           </div>
         </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="bgWrap">
-            <Image
-              alt="lambo"
-              src={lambo2}
-              placeholder="blur"
-              quality={100}
-              fill
-              sizes="90vw"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-          <div className="flex flex-col h-screen w-full bg-black/50">
-            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%]">
-              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center">
-                I don't believe in making a car for the future.
-                <br className="hidden md:block" /> I believe in making a car for
-                the day
-              </h1>
-              <div className="text-right justify-end items-end mt-4">
-                <h3 className="text-sm md:text-lg xl:text-2xl text-yellow-600 italic">
-                  Ferruccio Lamborghini__
-                </h3>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="bgWrap">
-            <Image
-              alt="lambo"
-              src={lambo3}
-              placeholder="blur"
-              quality={100}
-              fill
-              sizes="90vw"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-          <div className="flex flex-col h-screen w-full bg-black/50">
-            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] text-center px-2">
-              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center ">
-                If you are asking why we are not racing in Formula 1 ?
-                <br className="" /> it is because we don't want to
-              </h1>
-
-              <div className="text-right justify-end items-end mt-4">
-                <h3 className="text-sm md:text-lg xl:text-2xl text-yellow-600 italic">
-                  Stephan Winkelmann (CEO at the time)
-                </h3>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
       </Swiper>
     </motion.div>
   );
