@@ -1,51 +1,138 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-creative";
+import "swiper/css/navigation";
+import { EffectCreative, Autoplay, Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
-import banner from "../../../../public/assets/banner.jpg";
-import style from "./Banner.module.css";
-import FadeIn from "@/utils/FadeIn";
-import Link from "next/link";
+import lambo1 from "../../../../public/assets/banner.jpg";
+import lambo2 from "../../../../public/assets/banner.jpg";
+import lambo3 from "../../../../public/assets/banner.jpg";
+import "./banner.css";
 
-const Banner: React.FC = () => {
+const Banner = () => {
   return (
-    <div className="w-full">
-      <div className={`${style.bgWrap}`}>
-        <Image
-          alt="Banner"
-          src={banner}
-          placeholder="blur"
-          quality={100}
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: "cover",
-          }}
-        />
-      </div>
-      <div
-        className={`${style.bgText} bg-black/40 text-white flex justify-center items-center flex-col  px-2 md:px-4`}
+    <motion.div className="sticky top-0 h-[100vh]" data-scroll-section>
+      <Swiper
+        autoplay={{
+          delay: 7000,
+        }}
+        grabCursor={false}
+        navigation={true}
+        effect={"creative"}
+        creativeEffect={{
+          prev: {
+            // shadow: true,
+            translate: [-500, -100, 1500],
+          },
+          next: {
+            // shadow: true,
+            translate: [500, 100, 1500],
+          },
+        }}
+        modules={[EffectCreative, Autoplay, Navigation]}
+        className="mySwiper"
       >
-        <div className="flex flex-col max-w-[1200px] space-y-7">
-          <FadeIn delay={0.05}>
-            <span className="headings">
-              Your Gateway to Global Travel & Visa Solutions
-            </span>
-          </FadeIn>
-          <FadeIn delay={0.8}>
-            <span className="sub-heading !text-white">
-              Effortless, reliable visa processing for every journey
-            </span>
-          </FadeIn>
-          <FadeIn delay={1}>
-            <Link
-              href="/services"
-              className="cursor-pointer uppercase bg-[#6F4E37] font-bold px-10 py-5 border transition-all duration-300 ease-in-out hover:shadow-md transform hover:scale-105 !z-0"
+        <SwiperSlide>
+          <div className="bgWrap">
+            <Image
+              alt="lambo"
+              src={lambo1}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="flex flex-col h-full w-full bg-black/50">
+            <motion.div
+              initial={{ y: -400 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex flex-col justify-start items-center mt-[90%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] font-quantico"
             >
-              Start Your Application
-            </Link>
-          </FadeIn>
-        </div>
-      </div>
-    </div>
+              <h1 className="headings text-yellow-600">INTRODUCING</h1>
+              <div className="grid">
+                <h3 className="headings text-yellow-600">SPEED</h3>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ y: 400, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              className="flex justify-center items-center text-center mt-4 md:mt-8"
+            >
+              {/* <CarListButton href="/car" /> */}
+            </motion.div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="bgWrap">
+            <Image
+              alt="lambo"
+              src={lambo2}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="90vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="flex flex-col h-screen w-full bg-black/50">
+            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%]">
+              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center">
+                I don't believe in making a car for the future.
+                <br className="hidden md:block" /> I believe in making a car for
+                the day
+              </h1>
+              <div className="text-right justify-end items-end mt-4">
+                <h3 className="text-sm md:text-lg xl:text-2xl text-yellow-600 italic">
+                  Ferruccio Lamborghini__
+                </h3>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="bgWrap">
+            <Image
+              alt="lambo"
+              src={lambo3}
+              placeholder="blur"
+              quality={100}
+              fill
+              sizes="90vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+          <div className="flex flex-col h-screen w-full bg-black/50">
+            <div className="flex flex-col justify-start items-center mt-[70%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] text-center px-2">
+              <h1 className="text-xl md:text-3xl xl:text-4xl text-yellow-600 px-2 italic text-center ">
+                If you are asking why we are not racing in Formula 1 ?
+                <br className="" /> it is because we don't want to
+              </h1>
+
+              <div className="text-right justify-end items-end mt-4">
+                <h3 className="text-sm md:text-lg xl:text-2xl text-yellow-600 italic">
+                  Stephan Winkelmann (CEO at the time)
+                </h3>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </motion.div>
   );
 };
 
