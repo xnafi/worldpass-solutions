@@ -24,6 +24,7 @@ const about = () => {
         <div className="mt-10">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 p-4">
+              {/* image */}
               <Image
                 className="w-full h-full object-cover"
                 src={img1}
