@@ -5,8 +5,8 @@ const about = () => {
   return (
     <div
       className="bg-[#151412] py-12 h-full xl:h-screen flex flex-col items-center justify-center"
-      data-scroll-section
-    >
+      data-scroll-section>
+
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mt-[100px] lg:mt-0">
         <div className="text-center">
           <h2 className="text-base text-white/60 font-semibold tracking-wide uppercase">
