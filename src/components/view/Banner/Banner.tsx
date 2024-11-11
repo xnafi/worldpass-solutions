@@ -55,11 +55,11 @@ const Banner = () => {
                 initial={{ y: -400 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1 }}
-                className="flex flex-col justify-start items-center mt-[90%] md:mt-[20%] lg:mt-[20%] xl:mt-[15%] font-quantico"
+                className="flex flex-col justify-start items-center mt-[90%] md:mt-[40%] lg:mt-[30%] xl:mt-[15%] font-quantico text-center space-y-2 md:space-y-4"
               >
                 <h1 className="headings text-yellow-600">{service.heading}</h1>
                 <div className="grid">
-                  <h3 className="sub-headings text-yellow-600">
+                  <h3 className="sub-heading text-yellow-600">
                     {service.subheading}
                   </h3>
                 </div>
@@ -68,10 +68,10 @@ const Banner = () => {
                 initial={{ y: 400, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2 }}
-                className="flex justify-center items-center text-center mt-4 md:mt-8"
+                className="flex justify-center items-center text-center mt-4 md:mt-"
               >
                 <Link href={service.action.link}>
-                  <button className="action-button">
+                  <button className="buttonPrimary">
                     {service.action.label}
                   </button>
                 </Link>
