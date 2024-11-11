@@ -52,7 +52,7 @@ const Navbar = () => {
       className="bg-[#6F4E19]/50 fixed top-0 w-full transition-all duration-500 z-[998] backdrop-blur-md"
     >
       <div className="max-w-[1400px] mx-auto px-2 sm:px-6 lg:px-8 grid place-items-center">
-        <div className="relative flex items-center justify-between h-[100] w-full">
+        <div className="relative flex items-center justify-between !h-[100] w-full">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               onClick={handleToggle}
