@@ -13,7 +13,7 @@ export default function LocoWraper({
       options={{
         smooth: true,
         // direction: "horizontal",
-        
+        smartphones: true,
 
         // ... all available Locomotive Scroll instance options
       }}

@@ -16,7 +16,7 @@ const Banner = () => {
     <motion.div className="sticky top-0 h-[100vh]" data-scroll-section>
       <Swiper
         autoplay={{
-          delay: 7000,
+          delay: 3000,
         }}
         grabCursor={false}
         navigation={true}
