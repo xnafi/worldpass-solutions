@@ -45,9 +45,6 @@ const Banner = () => {
                 quality={100}
                 fill
                 sizes="100vw"
-                style={{
-                  objectFit: "cover",
-                }}
               />
             </div>
             <div className="flex flex-col h-full w-full bg-black/60 pt-[5%]">
