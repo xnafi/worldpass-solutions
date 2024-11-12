@@ -1,44 +1,31 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
+'use client'
 import immigrationOpportunitiesData from "@/data/immigrationOpportunitiesData";
-import { motion } from "framer-motion";
+import CardWithZoom from "../CardWithZoom/CardWithZoom";
+import { useRouter } from "next/navigation";
 
 const ImmigrationOpportunities = () => {
+  const router = useRouter();
   return (
     <section
-      className="immigration-opportunities-section py-8 px-4 bg-gray-100"
+      className="immigration-opportunities-section py-8 px-4 max-w-[1200px] mx-auto"
       data-scroll-section
     >
-      <h2 className="text-3xl font-bold text-center mb-6">
+      <h2 className="headings font-bold text-center mb-6">
         Immigration Opportunities
       </h2>
-      <div className="opportunity-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex flex-col md:flex-row gap-10 flex-wrap justify-around items-center">
         {immigrationOpportunitiesData?.map((opportunity) => (
-          <motion.div
+          <div
             key={opportunity.id}
             className="relative w-64 h-80 overflow-hidden rounded-lg cursor-pointer"
-            whileHover={{ scale: 1.05 }}
           >
-            <motion.div
-              className="absolute inset-0"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Image
-                src={opportunity?.image}
-                alt="image"
-                layout="fill"
-                objectFit="cover"
-                className="transition-transform duration-500"
+            <button type="button" onClick={() => router.push(opportunity?.action?.link)}>
+              <CardWithZoom
+                name={opportunity.title}
+                imageSrc={opportunity.image}
               />
-            </motion.div>
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-              <p className="text-white text-2xl font-semibold">
-                {opportunity.title}
-              </p>
-            </div>
-          </motion.div>
+            </button>
+          </div>
         ))}
       </div>
     </section>
