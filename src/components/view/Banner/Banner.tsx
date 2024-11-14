@@ -52,7 +52,7 @@ const Banner = () => {
                 initial={{ y: -400 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1 }}
-                className="flex flex-col justify-start items-center mt-[90%] md:mt-[40%] lg:mt-[30%] xl:mt-[15%] font-quantico text-center space-y-2 md:space-y-4"
+                className="flex flex-col justify-start items-center mt-[70%] md:mt-[35%] lg:mt-[30%] xl:mt-[15%] font-quantico text-center space-y-2 md:space-y-4"
               >
                 <h1 className="headings text-yellow-600">{service.heading}</h1>
                 <div className="grid">

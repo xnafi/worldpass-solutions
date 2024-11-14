@@ -11,7 +11,7 @@ const ImmigrationOpportunities = () => {
       className="immigration-opportunities-section py-8 px-4  grid place-items-center bg-black w-full"
       data-scroll-section
     >
-      <div className="max-w-[1200px] mx-auto h-screen grid place-items-center">
+      <div className="max-w-[1200px] mx-auto h-full lg:h-screen grid place-items-center">
         <h2 className="headings font-bold text-center mb-2">
           Immigration Opportunities
         </h2>
