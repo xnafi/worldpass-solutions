@@ -8,7 +8,7 @@ const ImmigrationOpportunities = () => {
 
   return (
     <section
-      className="immigration-opportunities-section py-8 px-4  grid place-items-center bg-black w-full"
+      className="immigration-opportunities-section py-4 px-4 grid place-items-center bg-black w-full"
       data-scroll-section
     >
       <div className="max-w-[1200px] mx-auto h-full lg:h-screen grid place-items-center">
