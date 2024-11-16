@@ -1,4 +1,4 @@
-import { ImmigrationOpportunity } from "@/app/Types/allTypes";
+import { ImmigrationOpportunity } from "@/Types/allTypes";
 
 const immigrationOpportunitiesData: ImmigrationOpportunity[] = [
   {

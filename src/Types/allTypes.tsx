@@ -8,3 +8,9 @@ export interface ImmigrationOpportunity {
     link: string; 
   };
 }
+export interface InputProps {
+  label: string;
+  value: string;
+  placeholder?: string;
+  onChange: (value: string) => void;
+}
