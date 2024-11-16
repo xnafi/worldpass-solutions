@@ -10,6 +10,7 @@ import Image from "next/image";
 import "./banner.css";
 import visaServices from "@/data/VisaTypes";
 import Link from "next/link";
+import PrimaryButton from "@/components/shared/PrimaryButton";
 
 const Banner = () => {
   return (
@@ -68,9 +69,8 @@ const Banner = () => {
                 className="flex justify-center items-center text-center mt-4 md:mt-"
               >
                 <Link href={service.action.link}>
-                  <button className="buttonPrimary">
-                    {service.action.label}
-                  </button>
+                  <PrimaryButton>{service.action.label}</PrimaryButton>
+                  
                 </Link>
               </motion.div>
             </div>

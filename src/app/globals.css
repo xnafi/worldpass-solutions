@@ -4,16 +4,16 @@
 
 @layer utilities {
   .headings {
-    @apply text-2xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-bold uppercase;
+    @apply text-2xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-extrabold uppercase text-[#D3D3D3];
   }
   .sub-heading {
-    @apply text-base md:text-xl lg:text-2xl font-semibold uppercase;
+    @apply text-base md:text-xl lg:text-2xl font-semibold uppercase text-[#D3D3D3];
   }
   .primary-text {
-    @apply text-sm md:text-base font-bold;
+    @apply text-sm md:text-base font-bold text-[#D3D3D3];
   }
-  .buttonPrimary {
-    @apply text-sm md:text-lg border;
+  .btnPrimaryPrimary {
+    @apply text-sm md:text-lg border bg-[#355a87] text-[#D3D3D3];
   }
   .feature-title {
     @apply text-lg md:text-2xl  xl:text-3xl font-semibold;
@@ -40,3 +40,76 @@ body {
   background: #72BF78;
   font-family: Arial, Helvetica, sans-serif;
 }
+/* From Uiverse.io by satyamchaudharydev */ 
+.btnPrimary {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnPrimary:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.btnPrimary:hover .icon {
+  transform: translate(4px);
+}
+
+.btnPrimary:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.btnPrimary::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+
+
