@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../../../public/assets/logo1.png";
-import PrimaryButton from "./PrimaryButton";
+import PrimaryButton from "@/utils/PrimaryButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -240,7 +240,7 @@ const Navbar = () => {
             </div>
             {/* login sign up */}
             <div className="hidden sm:flex sm:ml-2">
-              <Link href={"/apply"}>
+              <Link href={"/apply_now"}>
                 <PrimaryButton>{"Apply"}</PrimaryButton>
               </Link>
             </div>
@@ -385,27 +385,8 @@ const Navbar = () => {
               Contact
             </span>
           </Link>
-          <Link href="/login" onClick={handleClose}>
-            <span
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/login")
-                  ? "bg-gray-900"
-                  : "text-gray-300 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              Login
-            </span>
-          </Link>
-          <Link href="/sign-up" onClick={handleClose}>
-            <span
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/sign-up")
-                  ? "bg-gray-900"
-                  : "text-gray-300 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              Sign Up
-            </span>
+          <Link href={"/apply_now"}>
+            <PrimaryButton>{"Apply"}</PrimaryButton>
           </Link>
         </div>
       </motion.div>

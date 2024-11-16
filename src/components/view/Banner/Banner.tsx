@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -10,7 +10,7 @@ import Image from "next/image";
 import "./banner.css";
 import visaServices from "@/data/VisaTypes";
 import Link from "next/link";
-import PrimaryButton from "@/components/shared/PrimaryButton";
+import PrimaryButton from "@/utils/PrimaryButton";
 
 const Banner = () => {
   return (
@@ -70,7 +70,6 @@ const Banner = () => {
               >
                 <Link href={service.action.link}>
                   <PrimaryButton>{service.action.label}</PrimaryButton>
-                  
                 </Link>
               </motion.div>
             </div>
