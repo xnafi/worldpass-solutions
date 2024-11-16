@@ -4,7 +4,7 @@
 
 @layer utilities {
   .headings {
-    @apply text-2xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-extrabold uppercase text-[#D3D3D3];
+    @apply text-2xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-extrabold uppercase text-[#D3D3D3];
   }
   .sub-heading {
     @apply text-base md:text-xl lg:text-2xl font-semibold uppercase text-[#D3D3D3];

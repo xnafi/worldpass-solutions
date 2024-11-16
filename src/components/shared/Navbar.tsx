@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "../../../public/assets/logo1.png";
+import PrimaryButton from "./PrimaryButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -239,30 +240,9 @@ const Navbar = () => {
             </div>
             {/* login sign up */}
             <div className="hidden sm:flex sm:ml-2">
-              <div className="flex md:space-x-0 lg:space-x-4 items-center">
-                <Link href="/login">
-                  <span
-                    className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/login")
-                        ? "bg-gray-900"
-                        : "text-gray-300 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    Login
-                  </span>
-                </Link>
-                <Link href="/sign-up">
-                  <span
-                    className={`px-3 py-2 rounded-md text-md font-medium ${
-                      isActive("/sign-up")
-                        ? "bg-gray-900"
-                        : "text-gray-300 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    Sign Up
-                  </span>
-                </Link>
-              </div>
+              <Link href={"/apply"}>
+                <PrimaryButton>{"Apply"}</PrimaryButton>
+              </Link>
             </div>
           </div>
         </div>
