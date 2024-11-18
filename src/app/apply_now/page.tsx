@@ -1,8 +1,8 @@
+'use client'
 /* eslint-disable react/no-children-prop */
-"use client";
+import * as React from "react";
 import { useForm } from "@tanstack/react-form";
 import type { FieldApi } from "@tanstack/react-form";
-import React from "react";
 
 function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
   return (
@@ -14,7 +14,8 @@ function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
     </>
   );
 }
-export default function ApplyNow() {
+
+export default function App() {
   const form = useForm({
     defaultValues: {
       firstName: "",
@@ -23,9 +24,9 @@ export default function ApplyNow() {
     onSubmit: async ({ value }) => {
       // Do something with form data
       console.log(value);
-      
     },
   });
+
   return (
     <div>
       <h1>Simple Form Example</h1>
@@ -36,8 +37,8 @@ export default function ApplyNow() {
           form.handleSubmit();
         }}
       >
-        {/* first name */}
         <div>
+          {/* A type-safe field component*/}
           <form.Field
             name="firstName"
             validators={{
@@ -56,11 +57,11 @@ export default function ApplyNow() {
               },
             }}
             children={(field) => {
+              // Avoid hasty abstractions. Render props are great!
               return (
-                <div className="flex flex-col">
-                  <label htmlFor={field.name}>First Name</label>
+                <>
+                  <label htmlFor={field.name}>First Name:</label>
                   <input
-                    className="input-field"
                     id={field.name}
                     name={field.name}
                     value={field.state.value}
@@ -68,49 +69,29 @@ export default function ApplyNow() {
                     onChange={(e) => field.handleChange(e.target.value)}
                   />
                   <FieldInfo field={field} />
-                </div>
+                </>
               );
             }}
           />
         </div>
-        {/* last name */}
         <div>
           <form.Field
             name="lastName"
-            validators={{
-              onChange: ({ value }) =>
-                !value
-                  ? "A Last name is required"
-                  : value.length < 3
-                  ? "Last name must be at least 3 characters"
-                  : undefined,
-              onChangeAsyncDebounceMs: 500,
-              onChangeAsync: async ({ value }) => {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                return (
-                  value.includes("error") && 'No "error" allowed in last name'
-                );
-              },
-            }}
-            children={(field) => {
-              return (
-                <div className="flex flex-col">
-                  <label htmlFor={field.name}>Last Name</label>
-                  <input
-                    className="input-field"
-                    id={field.name}
-                    name={field.name}
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                  />
-                  <FieldInfo field={field} />
-                </div>
-              );
-            }}
+            children={(field) => (
+              <>
+                <label htmlFor={field.name}>Last Name:</label>
+                <input
+                  id={field.name}
+                  name={field.name}
+                  value={field.state.value}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
+                />
+                <FieldInfo field={field} />
+              </>
+            )}
           />
         </div>
-
         <form.Subscribe
           selector={(state) => [state.canSubmit, state.isSubmitting]}
           children={([canSubmit, isSubmitting]) => (
@@ -123,3 +104,7 @@ export default function ApplyNow() {
     </div>
   );
 }
+
+
+
+
