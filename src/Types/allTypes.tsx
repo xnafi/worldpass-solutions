@@ -10,7 +10,7 @@ export interface ImmigrationOpportunity {
 }
 export interface InputProps {
   label: string;
-  value?: string;
+  value: string;
   placeholder?: string;
   onChange: (value: string) => void;
 }
