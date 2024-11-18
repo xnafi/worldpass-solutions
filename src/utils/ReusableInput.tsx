@@ -1,21 +1,17 @@
-import { InputProps } from "@/Types/allTypes";
-import { div } from "framer-motion/client";
 import React from "react";
 interface InputFieldProps {
-  label?: string;
   field: FieldApi<any, any, any, any>;
   placeholder?: string;
 }
 
 export const InputField: React.FC<InputFieldProps> = ({
-  label,
   field,
   placeholder,
 }) => {
   return (
     <div className="flex flex-col input-container">
       <div className="input-container flex flex-col">
-        <label className="input-label">{field.name}</label>
+        <label className="input-label">{field.label}</label>
         <input
           className="input-field"
           id={field.name}
