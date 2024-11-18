@@ -2,10 +2,11 @@ import React from "react";
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
+  type?: string;
 }
-export default function PrimaryButton({ children }: PrimaryButtonProps) {
+export default function PrimaryButton({ children, type }: PrimaryButtonProps) {
   return (
-    <button className="btnPrimary">
+    <button className="btnPrimary" type={type}>
       {children}
       <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
         <path
