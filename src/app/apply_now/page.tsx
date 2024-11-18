@@ -4,7 +4,7 @@ import * as React from "react";
 import { useForm } from "@tanstack/react-form";
 import type { FieldApi } from "@tanstack/react-form";
 
-function FieldInfo({ field }: { field: FieldApi<any, any, any, any> }) {
+function FieldInfo({ field }: { field: FieldApi<unknown, unknown, unknown, unknown> }) {
   return (
     <>
       {field.state.meta.isTouched && field.state.meta.errors.length ? (
