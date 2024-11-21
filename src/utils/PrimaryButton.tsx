@@ -2,8 +2,9 @@ import React from "react";
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
-  type?: string;
+  type?: "button" | "submit" | "reset"; 
 }
+
 export default function PrimaryButton({ children, type }: PrimaryButtonProps) {
   return (
     <button className="btnPrimary" type={type}>

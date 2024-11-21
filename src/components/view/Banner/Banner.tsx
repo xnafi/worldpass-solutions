@@ -69,7 +69,7 @@ const Banner = () => {
                 className="flex justify-center items-center text-center mt-4 md:mt-"
               >
                 <Link href={service.action.link}>
-                  <PrimaryButton>{service.action.label}</PrimaryButton>
+                  <PrimaryButton type={"submit"}>{service.action.label}</PrimaryButton>
                 </Link>
               </motion.div>
             </div>
