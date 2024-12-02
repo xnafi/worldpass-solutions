@@ -1,37 +1,18 @@
 "use client";
-import { useRef } from "react";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+
 
 export default function LocoWraper({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  const containerRef = useRef(null);
+  }) {
+    const lenis = useLenis(({ scroll }) => {
+      // called every scroll
+    });
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-        // direction: "horizontal",
-        smartphones: {
-          smooth: true,
-          horizontalGesture: 29,
-        },
-
-        // ... all available Locomotive Scroll instance options
-      }}
-      watch={
-        [
-          //..all the dependencies you want to watch to update the scroll.
-          //  Basicaly, you would want to watch page/location changes
-          //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-        ]
-      }
-      containerRef={containerRef}
-    >
-      <main data-scroll-container ref={containerRef}>
-        {children}
-      </main>
-    </LocomotiveScrollProvider>
+    <main>
+      <ReactLenis root>{children}</ReactLenis>
+    </main>
   );
 }
