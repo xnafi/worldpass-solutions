@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import {Source_Code_Pro} from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
+import LenisWrapper from "@/utils/SmoothScrollLenisWrapper";
 
 const geistSans = Source_Code_Pro({
   weight: "900",
@@ -26,12 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.className} ${geistMono.className} antialiased`}
-      >
-        <Navbar/>
-        {children}
-      </body>
+      <LenisWrapper>
+        <body
+          className={`${geistSans.className} ${geistMono.className} antialiased`}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </LenisWrapper>
     </html>
   );
 }

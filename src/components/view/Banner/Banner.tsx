@@ -14,7 +14,7 @@ import PrimaryButton from "@/utils/PrimaryButton";
 
 const Banner = () => {
   return (
-    <motion.div className="sticky top-0 h-[100vh]" data-scroll-section>
+    <motion.div className=" h-[100vh]">
       <Swiper
         autoplay={{
           delay: 3000,
