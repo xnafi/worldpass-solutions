@@ -1,40 +1,29 @@
-"use client";
-import { motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
+// "use client";
+import { ReactNode, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 interface FadeInProps {
   children: ReactNode;
-  delay?: number;
 }
 
-const fadeIn: Variants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (custom: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: custom,
-      duration: 0.8,
-      ease: [0.42, 0, 0.58, 1],
-    },
-  }),
-};
+const FadeIn: React.FC<FadeInProps> = ({ children }) => {
+  const textRef = useRef(null);
+  const containerRef = useRef(null);
 
-const FadeIn: React.FC<FadeInProps> = ({ children, delay = 0 }) => {
+  useGSAP(
+    () => {
+      gsap.to(textRef.current, {
+        x: 200,
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <motion.div
-      initial="initial"
-      whileInView="animate"
-      variants={fadeIn}
-      custom={delay}
-      viewport={{ once: true, amount: 0.5 }}
-      className="w-full"
-    >
-      {children}
-    </motion.div>
+    <div ref={containerRef}>
+      <span ref={textRef}>{children}</span>
+    </div>
   );
 };
 
