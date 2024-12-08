@@ -24,12 +24,12 @@ const Banner = () => {
         effect={"creative"}
         creativeEffect={{
           prev: {
-            // shadow: true,
-            translate: [-500, -100, 1500],
+            shadow: true,
+            translate: [-0, -0, 2500],
           },
           next: {
-            // shadow: true,
-            translate: [500, 100, 1500],
+            shadow: true,
+            translate: [0, 0, 2500],
           },
         }}
         modules={[EffectCreative, Autoplay, Navigation]}
